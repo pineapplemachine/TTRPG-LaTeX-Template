@@ -15,6 +15,16 @@
 \definecolor {rulered}     {HTML} {9C2B1B} % triangular rule in statsblock
 \definecolor {contourgray} {HTML} {CACCBE} % outline color in part & chapter font
 
+% High-contrast grayscale
+\definecolor {titleblack} {HTML} {000000}
+\definecolor {titlegray} {HTML} {303030}
+\definecolor {rulegray} {HTML} {303030}
+\definecolor {pagegray} {HTML} {303030}
+\definecolor {themegray} {HTML} {e0e0e0}
+\definecolor {bggray} {HTML} {e0e0e0}
+\definecolor {statblockribbongray} {HTML} {303030}
+\definecolor {statblockbggray} {HTML} {ffffff}
+
 % Type aliases
 \colorlet {contourgrey} {contourgray}
 
@@ -33,7 +43,8 @@
 \colorlet {DmgSlateGrey} {DmgSlateGray}
 
 % The color used in \DndSetThemeColor when a new color is not set
-\colorlet {themecolor} {PhbLightGreen} % Set the default theme to Part 1 of the PHB.
+% \colorlet {themecolor} {PhbLightGreen} % Set the default theme to Part 1 of the PHB.
+\colorlet {themecolor} {themegray}
 
 % Element colors that change when \DndSetThemeColor is used
 \colorlet {commentcolor} {themecolor} % DndComment background
@@ -41,7 +52,8 @@
 \colorlet {tablecolor}   {themecolor} % DndTable even row background
 
 % Element colors that do not respond to \DndSetThemeColor
-\colorlet {readaloudcolor} {bgtan} % DndReadAloud background
+% \colorlet {readaloudcolor} {bgtan} % DndReadAloud background
+\colorlet {readaloudcolor} {bggray} % DndReadAloud background
 \definecolor {statblockribbon} {HTML} {E69A28} % stat block top/bottom borders (gold)
 \definecolor {statblockbg}     {HTML} {FDF1DC} % stat block background (tan)
 

@@ -1,66 +1,24 @@
-# DnD 5e LaTeX Template
+# TTRPG LaTeX Template
 
-[![Latest release](https://img.shields.io/github/release/rpgtex/DND-5e-LaTeX-Template/all.svg)](https://github.com/rpgtex/DND-5e-LaTeX-Template/releases/latest)
-[![Build Status](https://img.shields.io/circleci/project/github/rpgtex/DND-5e-LaTeX-Template/master.svg?style=flat)](https://circleci.com/gh/rpgtex/DND-5e-LaTeX-Template)
-
-This is a LaTeX template for typesetting documents in the style of the fifth edition of the "world's greatest roleplaying game".
+This is a LaTeX template based on [DND-5e-LaTeX-Template](https://github.com/rpgtex/DND-5e-LaTeX-Template).
 
 ## Features
 
-* Color schemes, fonts, and layout are close to the core books (but not exactly the same).
+* Higher-contrast and more print-friendly than DND-5e-LaTeX-Template.
 * TeX Live includes the default fonts.
 * Works with pdfTeX, LuaTeX, and XeTeX.
 
-![Preview](scrot.jpg)
+![Preview](example.png)
 
 ## Installation
 
-There are three options for using this project; choose the one that's
-right for you.
+Clone this repository to `$TEXMFHOME/tex/latex/`:
 
-### User install using `TEXMFHOME` (recommended)
+```sh
+git clone https://github.com/rpgtex/DND-5e-LaTeX-Template.git "$(kpsewhich -var-value TEXMFHOME)/tex/latex/dnd"
+```
 
-This will install the template for your current user in one of the following locations:
-
-* Linux: `~/.texmf/tex/latex`
-* OS X / macOS: `~/Library/texmf/tex/latex`
-* Windows: `C:\Users\{username}\texmf\tex\latex`
-
-LaTeX will find the package automatically.
-
-1. Prepare your `TEXMFHOME` directory.
-
-    ```sh
-    mkdir "$(kpsewhich -var-value TEXMFHOME)/tex/latex/"
-    ```
-
-2. Download the [latest release](https://github.com/rpgtex/DND-5e-LaTeX-Template/releases/latest) and extract it in `$TEXMFHOME/tex/latex/`.
-
-    ```sh
-    wget https://github.com/rpgtex/DND-5e-LaTeX-Template/archive/master.zip
-    unzip -d "$(kpsewhich -var-value TEXMFHOME)/tex/latex/" master.zip
-    cd "$(kpsewhich -var-value TEXMFHOME)/tex/latex/"
-    mv DND-5e-LaTeX-Template-master dnd
-    ```
-
-    Alternatively, clone the repo to the same location:
-
-    ```sh
-    git clone https://github.com/rpgtex/DND-5e-LaTeX-Template.git "$(kpsewhich -var-value TEXMFHOME)/tex/latex/dnd"
-    ```
-
-### Using Overleaf
-
-[Overleaf](https://overleaf.com) is an online TeX editor -- think
-about it like Google Docs for TeX documents.  This option does not
-require a local TeX installation and is an ideal approach for one-off
-projects.
-
-1. Download this GitHub repository as a ZIP archive using the *Clone
-   or download* link above.
-2. On Overleaf, click the *New Project* button and select *Upload
-   Project*.  Upload the ZIP archive you downloaded from this
-   repository.
+Please refer to [rpgtex/DND-5e-LaTeX-Template](https://github.com/rpgtex/DND-5e-LaTeX-Template) for more information about installing this package.
 
 ### Project install using `TEXINPUTS`
 
@@ -78,6 +36,8 @@ TEXINPUTS=./lib//: pdflatex project.tex
 ```
 
 ## Usage
+
+Please refer to [rpgtex/DND-5e-LaTeX-Template](https://github.com/rpgtex/DND-5e-LaTeX-Template) for more information about using this package.
 
 ### Class (recommended)
 
@@ -110,163 +70,19 @@ Note that the package has only been tested with the `book` class.
 % ...
 ```
 
-### Options
-
-| Option         | Package `dnd`   | Class `dndbook`   |
-| -------------- | :-------------: | :---------------: |
-| `bg`           | ✓               | ✓                 |
-| `justified`    | ✓               | ✓                 |
-| `layout`       | ✓               |                   |
-| `nomultitoc`   | ✓               | ✓                 |
-| `nodeprecatedcode`   | ✓               | ✓                 |
-
-The `dndbook` class also supports all the options of the `book` class.
-
-#### `bg`
-
-Declare how to load background and footer images. This is a key-value option with the following possible values:
-
-* `full`: Load both background and footer images. (**default**)
-* `none`: Removes both background and footer images.
-* `print`: Loads only the footer images.
-
-#### `justified`
-
-Justify column copy.
-
-#### `layout`
-
-Controls whether loading the `dnd` package also modifies the document layout (geometry, colors, typography, etc.).
-This is a boolean option with the following possible values:
-
-* `true`: Modify the document layout.
-* `false`: Do not modify the document layout.
-
-The default value is `true` for backwards compatibility with early releases.
-This will change in a future release.
-
-#### `nomultitoc`
-
-Disable multi-column table of contents.
-
-#### `nodeprecatedcode`
-
-Excludes all deprecated code from the build process.
-
 ## Dependencies
 
-If you don't have LaTeX installed, we recommend installing a complete [TeX Live distribution](https://www.tug.org/texlive/).
+If you don't have LaTeX installed, it is recommended that you install a complete [TeX Live distribution](https://www.tug.org/texlive/).
 
-### Ubuntu
-
-```sh
-sudo apt-get install texlive-full
-```
-
-### Arch
-
-```sh
-sudo pacman -S texlive-bin texlive-core texlive-latexextra
-```
-
-### OSX
-
-MacTex has its own [installer](https://www.tug.org/mactex/), but you can install it through brew cask:
-
-#### Full version
-
-```sh
-brew cask install mactex
-```
-
-#### Slightly smaller version without GUI
-
-```sh
-brew cask install mactex-no-gui
-```
-
-#### Minimal version
-
-Use `tlmgr` to install packages as needed, see this [answer](https://tex.stackexchange.com/a/470285) for more information
-
-```sh
-brew cask install basictex
-brew cask install tex-live-utility
-```
-
-After any of this, use the following such that the texlive directory doesn't require admin rights.
-
-```sh
-sudo chown -R myuser:mygroup /usr/local/texlive
-```
-
-For more information about MacTex permissions, see the following StackExchange [post](https://tex.stackexchange.com/questions/3744/how-do-i-set-up-mactex-so-admin-rights-arent-necessary)
+Please refer to [rpgtex/DND-5e-LaTeX-Template](https://github.com/rpgtex/DND-5e-LaTeX-Template) for more information about TeX Live.
 
 ## Known issues and solutions
 
-### Stat block text color does not survive page breaks
-
-This is a known issue in `tcolorbox`. According to the `tcolorbox` 4.12 manual (p. 363):
-
-> If your text content contains some text color changing commands, your color will not survive the break to the next box.
-
-You can use LuaTeX to compile the document.
-
-```sh
-lualatex main.tex
-```
-
-### Wrapping `monsterbox` in float disrupts spacing inside stat block
-
-Wrapping a `monsterbox` (or `monsterboxnobg`) in a floating figure adds extra space between stat block elements:
-
-```latex
-\begin{figure}[b]
-  \begin{monsterbox}{Orc Warden}
-    % ...
-  \end{monsterbox}
-\end{figure}
-```
-
-Instead, use the `tcolorbox` `float` parameter:
-
-```latex
-\begin{monsterbox}[float=b]{Orc Warden}
-  % ...
-\end{monsterbox}
-```
-
-Refer to the `tcolorbox` documentation (section 4.13) for more float parameters.
-
-## Contributing
-
-### Style
-
-We use [EditorConfig](https://editorconfig.org/) to enforce consistent formatting.
-Install the appropriate plugin for your editor.
-
-### Preparing a new release
-
-1. Run `./bin/bump-version` to tag the new version.
-
-    ```sh
-    ./bin/bumpversion <version>
-    ```
-
-2. Compile the example PDF.
-3. Save the first page of the PDF as scrot.jpg.
-4. Update the change log for the new release; commit your changes.
-5. Push changes.
-
-    ```sh
-    git push && git push --tags
-    ```
-
-6. [Create a new release](https://help.github.com/articles/creating-releases/) and attach the PDF and scrot.
+Please refer to [rpgtex/DND-5e-LaTeX-Template](https://github.com/rpgtex/DND-5e-LaTeX-Template) for more information about known issues.
 
 ## Credits
 
-* Background image from [Lost and Taken](https://lostandtaken.com/)
+* DND-5e-LaTeX-Template background image from [Lost and Taken](https://lostandtaken.com/)
 
 ## License
 

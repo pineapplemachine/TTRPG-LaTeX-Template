@@ -34,14 +34,14 @@
 \fancyhf {} % clear all headers and footers
 
 % Header is used to include the page background
-\fancyhead{
-  \bool_if:NT \l__dnd_show_background_bool
-    {
-    \begin{tikzpicture}[remember~picture,overlay]
-      \node[inner~sep=0pt] at (current~page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{img/paper}};
-    \end{tikzpicture}
-    }
-}
+% \fancyhead{
+%   \bool_if:NT \l__dnd_show_background_bool
+%     {
+%     \begin{tikzpicture}[remember~picture,overlay]
+%       \node[inner~sep=0pt] at (current~page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{img/paper}};
+%     \end{tikzpicture}
+%     }
+% }
 
 % Left-even page footer
 \fancyfoot[LE]{%

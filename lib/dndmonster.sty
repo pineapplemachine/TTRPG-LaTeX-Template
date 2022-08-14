@@ -60,12 +60,12 @@
     right       = 0pt,
     sharp~corners,
     opacityback = 0,
-    colframe    = titlered,
+    colframe    = titleblack,
     fonttitle   = \DndFontStatBlockTitle,
     fontupper   = \DndFontStatBlockBody,
     fontlower   = \DndFontStatBlockBody,
     title       = {#2},
-    coltitle    = titlered,
+    coltitle    = titleblack,
     #1
   }
 
@@ -86,15 +86,15 @@
     bottom           = 7pt,
     sharp~corners,
     oversize         = 0pt,
-    borderline~north = {3pt} {0pt}   {titlered},
-    borderline~north = {2pt} {0.5pt} {statblockribbon},
-    borderline~south = {3pt} {0pt}   {titlered},
-    borderline~south = {2pt} {0.5pt} {statblockribbon},
-    colback          = statblockbg,
-    colbacktitle     = statblockbg,
-    colframe         = titlered,
+    borderline~north = {3pt} {0pt}   {titleblack},
+    borderline~north = {2pt} {0.5pt} {statblockribbongray},
+    borderline~south = {3pt} {0pt}   {titleblack},
+    borderline~south = {2pt} {0.5pt} {statblockribbongray},
+    colback          = statblockbggray,
+    colbacktitle     = statblockbggray,
+    colframe         = titleblack,
     fonttitle        = \DndFontStatBlockTitle,
-    coltitle         = titlered,
+    coltitle         = titleblack,
     fontupper        = \DndFontStatBlockBody,
     fontlower        = \DndFontStatBlockBody,
     title            = {#2},
@@ -124,7 +124,7 @@
   {
     \par \vspace{-2pt} \noindent
     \begin {tikzpicture}
-      \draw [ rulered, fill = rulered ] ( 0, 0 ) -- ( 0, 0.1 ) -- ( \linewidth, 0.05 );
+      \draw [ rulegray, fill = rulegray ] ( 0, 0 ) -- ( 0, 0.1 ) -- ( \linewidth, 0.05 );
     \end {tikzpicture}
     \par
   }
@@ -133,7 +133,7 @@
 \newlist {__dnd_monster_attributes} {description} {1}
 \setlist [__dnd_monster_attributes]
   {
-    before   = \color {titlered},
+    before   = \color {titleblack},
     font     = \DndFontStatBlockBody,
     labelsep = \l__dnd_space_dim,
     nosep,
@@ -344,7 +344,7 @@
 % Ability scores in a table
 \cs_new_protected_nopar:Npn \__dnd_monster_ability_scores:
   {
-    \color {titlered}
+    \color {titleblack}
     \par \vspace{1pt} \noindent
     \begin{tabularx} {\linewidth} {YYYYYY}
       \rule {0pt} {3.7mm} % adds space between hline and table

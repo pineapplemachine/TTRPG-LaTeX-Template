@@ -52,10 +52,14 @@
     \setlength {\RaggedRightParindent} {\parindent}
 
     % Restrict hyphenation
-    \tolerance        = 1
-    \emergencystretch = \maxdimen
-    \hyphenpenalty    = 10000
-    \hbadness         = 10000
+    %\tolerance        = 1
+    %\emergencystretch = \maxdimen
+    %\hyphenpenalty    = 10000
+    %\hbadness         = 10000
+    \tolerance = 1
+    \emergencystretch = 10em
+    \hyphenpenalty = 75
+    \hbadness = 75
 
     % Set left justification if not justified
     \bool_if:NF \l__dnd_justified_bool

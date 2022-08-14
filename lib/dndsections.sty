@@ -20,16 +20,16 @@
   \titleformat {\part}
     [display]
     { \centering \DndFontPart } % format
-    { \DndContour{\partname\ \thepart} } % label
+    { \partname\ \thepart } % label
     { 2ex } % sep
-    { \DndContour } % before-code
+    { } % before-code
 
   % Chapter
   \titleformat {\chapter}
     { \DndFontChapter } % format
-    { \DndContour{\chaptertitlename\ \thechapter :} } % label
+    { \chaptertitlename\ \thechapter : } % label
     { \wordsep } % sep
-    { \DndContour } % before-code
+    { } % before-code
 
   \titlespacing* {\chapter}
     { 0pt }  % left
@@ -42,11 +42,12 @@
     { \thesection } % label
     { 1em } % sep
     { \nopagebreak } % before-code
+    [ \vspace{-.3ex} \titleline{ \color{titlegray} \titlerule[2pt] } ] % after-code
 
   \titlespacing* { \section }
     { 0pt } % left
     { 1.3ex plus .43ex minus .43ex } % before-sep
-    { 0pt } % after-sep
+    { 1.2ex } % after-sep
 
   % Subsection
   \titleformat {\subsection}
@@ -54,7 +55,7 @@
     { \thesubsection } % label
     { 1em } % sep
     { \nopagebreak } % before-code
-    [ \vspace{-.3ex} \titleline{ \color{titlegold} \titlerule[1pt] } ] % after-code
+    [ \vspace{-.3ex} \titleline{ \color{titlegray} \titlerule[1pt] } ] % after-code
 
   \titlespacing*{ \subsection }
     { 0pt } % left
