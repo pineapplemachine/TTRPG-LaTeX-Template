@@ -57,13 +57,13 @@
     %\hyphenpenalty    = 10000
     %\hbadness         = 10000
     \tolerance = 1
-    \emergencystretch = 10em
-    \hyphenpenalty = 75
-    \hbadness = 75
-
+    \emergencystretch = 12em
+    \hyphenpenalty = 70
+    \hbadness = 70
+    
     % Set left justification if not justified
-    \bool_if:NF \l__dnd_justified_bool
-      { \RaggedRight }
+    %\bool_if:NF \l__dnd_justified_bool
+    %  { \RaggedRight }
 
     % Customize itemize environment.
     \setlist{leftmargin=1em}
